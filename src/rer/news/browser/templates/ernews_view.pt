@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="rer.news">
+  <head>
+    <metal:styleslot fill-slot="style_slot">
+      <link rel="stylesheet" type="text/css" href="/++plone++rer.news/rernews.css?version=${view/getVersion}" />
+    </metal:styleslot>
+  </head>
+
+  <body>
+    <metal:content-title fill-slot="content-title">
+      <metal:content-title define-macro="content-title">
+        <div class="news-date"
+             tal:define="date view/getEffectiveDate"
+             tal:condition="date"
+             i18n:domain="plonelocales">
+          <tal:weekday i18n:translate="">${date/weekday}</tal:weekday>&#44;&nbsp; ${date/day} <tal:month i18n:translate="">${date/month}</tal:month> ${date/year}
+        </div>
+        <h1 class="documentFirstHeading">${context/Title}</h1>
+      </metal:content-title>
+    </metal:content-title>
+    <metal:content-description fill-slot="content-description">
+      <metal:content-description define-macro="content-description">
+
+      </metal:content-description>
+    </metal:content-description>
+    <metal:content-core fill-slot="content-core">
+      <metal:content-core define-macro="content-core">
+        <div class="news-body">
+          <div class="pat-tiles-management before-text" data-pat-tiles-management="managerId:beforeText" />
+          <div class="news-text"
+               tal:define="text context/text"
+               tal:condition="text"
+               tal:content="structure text/output">
+          </div>
+          <div class="pat-tiles-management after-text" data-pat-tiles-management="managerId:beforeText" />
+        </div>
+        <div class="news-column">
+          <div class="pat-tiles-management right-column" data-pat-tiles-management="managerId:rightColumn" />
+        </div>
+      </metal:content-core>
+    </metal:content-core>
+  </body>
+</html>

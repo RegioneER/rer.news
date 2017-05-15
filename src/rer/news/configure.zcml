@@ -8,12 +8,17 @@
 
   <includeDependencies package="." />
 
+  <permission
+      id="rer.news.AddERNews"
+      title="rer.news: Add ERNews"
+      />
+
   <include package=".browser" />
 
 
   <genericsetup:registerProfile
       name="default"
-      title="rer.news"
+      title="RER: News"
       directory="profiles/default"
       description="Installs the rer.news add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -22,7 +27,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="rer.news (uninstall)"
+      title="RER: News (uninstall)"
       directory="profiles/uninstall"
       description="Uninstalls the rer.news add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"

@@ -8,7 +8,7 @@
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">ERNews</property>
+      name="title">ER News</property>
   <property
       i18n:translate=""
       name="description"></property>
@@ -26,24 +26,33 @@
   <property name="global_allow">True</property>
 
   <!-- Schema, class and security -->
-  <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="add_permission">rer.news.AddERNews</property>
+  <property name="klass">rer.news.content.ERNews</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
   <property name="schema">rer.news.interfaces.IERNews</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors">
-    <element value="plone.app.content.interfaces.INameFromTitle" />
+    <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+    <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
+    <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
+    <element value="plone.app.dexterity.behaviors.id.IShortName"/>
+    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
+    <element value="plone.app.relationfield.behavior.IRelatedItems"/>
+    <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
+    <element value="plone.app.lockingbehavior.behaviors.ILocking" />
+    <element value="plone.layoutaware" />
   </property>
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++ERNews</property>
   <property name="immediate_view">view</property>
-  <property name="default_view">view</property>
+  <property name="default_view">ernews_view</property>
   <property name="default_view_fallback">False</property>
   <property name="view_methods">
-    <element value="view" />
+    <element value="ernews_view" />
   </property>
 
   <!-- Method aliases -->

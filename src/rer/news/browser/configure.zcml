@@ -18,4 +18,20 @@
       directory="static"
       />
 
+  <browser:page
+      for="rer.news.interfaces.IERNews"
+      name="images"
+      class=".scaling.ImageScaling"
+      allowed_interface="plone.app.imaging.interfaces.IImageScaling"
+      layer="rer.news.interfaces.IRerNewsLayer"
+      permission="zope2.View" />
+
+  <browser:page
+    name="ernews_view"
+    class=".view.ERNewsView"
+    permission="zope2.View"
+    for="rer.news.interfaces.IERNews"
+    layer="rer.news.interfaces.IRerNewsLayer"
+    template="templates/ernews_view.pt"
+    />
 </configure>
