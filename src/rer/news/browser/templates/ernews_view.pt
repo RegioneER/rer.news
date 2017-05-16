@@ -40,6 +40,27 @@
           <div class="pat-tiles-management after-text" data-pat-tiles-management="managerId:beforeText" />
         </div>
         <div class="news-column">
+          <div class="news-contents"
+               tal:define="contents view/getNewsContents"
+               tal:condition="contents">
+            <h3 i18n:translate="rernews_contents_label">Additional contents</h3>
+            <ul>
+              <li tal:repeat="content contents">
+                <a href="${content/getURL}" title="${content/Title}">${content/Title}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="news-links"
+               tal:define="links view/getLinks"
+               tal:condition="links">
+            <h3 i18n:translate="rernews_link_label">Links</h3>
+            <ul>
+              <li tal:repeat="link links">
+                <a href="${link/remoteUrl}" title="${link/title}">${link/title}</a>
+              </li>
+            </ul>
+          </div>
+
           <div class="pat-tiles-management right-column" data-pat-tiles-management="managerId:rightColumn" />
         </div>
       </metal:content-core>
