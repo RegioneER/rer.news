@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="rer.news"
-      interface="rer.news.interfaces.IRerNewsLayer"
+      interface="rer.news.interfaces.IRERNewsLayer"
       />
 </layers>

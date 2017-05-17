@@ -37,7 +37,16 @@
                tal:condition="text"
                tal:content="structure text/output">
           </div>
-          <div class="pat-tiles-management after-text" data-pat-tiles-management="managerId:beforeText" />
+          <div class="pat-tiles-management after-text" data-pat-tiles-management="managerId:afterText" />
+          <div class="news-archive"
+               tal:define="archive view/getNewsArchiveLink"
+               tal:condition="archive">
+            <a href="${archive}"
+               title="news archive"
+               i18n:translate="label_news_archive">
+              News archive
+            </a>
+          </div>
         </div>
         <div class="news-column">
           <div class="news-contents"

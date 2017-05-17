@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        i18n:domain="rer.news">
+
+    <configlet
+        title="RER News settings"
+        action_id="instant-articles-controlpanel"
+        appId="rer.news"
+        category="Products"
+        condition_expr=""
+        icon_expr=""
+        url_expr="string:${portal_url}/@@rer-news-controlpanel"
+        visible="True"
+        i18n:attributes="title">
+            <permission>rer.news: Manage Settings</permission>
+    </configlet>
+
+</object>

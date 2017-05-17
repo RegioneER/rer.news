@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from plone import api
+from plone.api.exc import InvalidParameterError
 from Products.Five.browser import BrowserView
+from rer.news.interfaces import IRERNewsSettings
 from zope.i18nmessageid import MessageFactory
+import logging
 import pkg_resources
 
+logger = logging.getLogger(__name__)
 PLMF = MessageFactory('plonelocales')
 
 
@@ -51,3 +55,18 @@ class ERNewsView(BrowserView):
             'View',
             user=api.user.get_current(),
             obj=link)
+
+    def getNewsArchiveLink(self):
+        try:
+            path = api.portal.get_registry_record(
+                'news_archive',
+                interface=IRERNewsSettings)
+        except InvalidParameterError as e:
+            logger.exception(e)
+            return ""
+        if not path:
+            return ""
+        item = api.content.get(path=path)
+        if not item:
+            return ""
+        return item.absolute_url()

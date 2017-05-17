@@ -9,6 +9,11 @@
   <includeDependencies package="." />
 
   <permission
+     id="rer.news.permissions.ManageSettings"
+     title="rer.news: Manage Settings"
+     />
+
+  <permission
       id="rer.news.AddERNews"
       title="rer.news: Add ERNews"
       />

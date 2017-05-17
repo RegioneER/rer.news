@@ -3,7 +3,7 @@ from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
-from rer.news.interfaces import IERNews
+from rer.news.interfaces import IRERNews
 from rer.news.testing import RER_NEWS_INTEGRATION_TESTING  # noqa
 from zope.component import createObject
 from zope.component import queryUtility
@@ -24,7 +24,7 @@ class ERNewsIntegrationTest(unittest.TestCase):
     def test_schema(self):
         fti = queryUtility(IDexterityFTI, name='ERNews')
         schema = fti.lookupSchema()
-        self.assertEqual(IERNews, schema)
+        self.assertEqual(IRERNews, schema)
 
     def test_fti(self):
         fti = queryUtility(IDexterityFTI, name='ERNews')
@@ -34,7 +34,7 @@ class ERNewsIntegrationTest(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name='ERNews')
         factory = fti.factory
         obj = createObject(factory)
-        self.assertTrue(IERNews.providedBy(obj))
+        self.assertTrue(IRERNews.providedBy(obj))
 
     def test_adding(self):
         obj = api.content.create(
@@ -42,4 +42,4 @@ class ERNewsIntegrationTest(unittest.TestCase):
             type='ERNews',
             id='ERNews',
         )
-        self.assertTrue(IERNews.providedBy(obj))
+        self.assertTrue(IRERNews.providedBy(obj))

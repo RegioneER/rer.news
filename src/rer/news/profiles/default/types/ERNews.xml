@@ -30,7 +30,7 @@
   <property name="klass">rer.news.content.ERNews</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">rer.news.interfaces.IERNews</property>
+  <property name="schema">rer.news.interfaces.IRERNews</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors">
@@ -49,10 +49,10 @@
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++ERNews</property>
   <property name="immediate_view">view</property>
-  <property name="default_view">ernews_view</property>
+  <property name="default_view">rernews_view</property>
   <property name="default_view_fallback">False</property>
   <property name="view_methods">
-    <element value="ernews_view" />
+    <element value="rernews_view" />
   </property>
 
   <!-- Method aliases -->

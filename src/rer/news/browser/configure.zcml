@@ -8,7 +8,7 @@
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
-      layer="rer.news.interfaces.IRerNewsLayer"
+      layer="rer.news.interfaces.IRERNewsLayer"
       />
 
   <!-- Publish static files -->
@@ -19,19 +19,27 @@
       />
 
   <browser:page
-      for="rer.news.interfaces.IERNews"
+      for="rer.news.interfaces.IRERNews"
       name="images"
       class=".scaling.ImageScaling"
       allowed_interface="plone.app.imaging.interfaces.IImageScaling"
-      layer="rer.news.interfaces.IRerNewsLayer"
+      layer="rer.news.interfaces.IRERNewsLayer"
       permission="zope2.View" />
 
   <browser:page
-    name="ernews_view"
+    name="rernews_view"
     class=".view.ERNewsView"
     permission="zope2.View"
-    for="rer.news.interfaces.IERNews"
-    layer="rer.news.interfaces.IRerNewsLayer"
-    template="templates/ernews_view.pt"
+    for="rer.news.interfaces.IRERNews"
+    layer="rer.news.interfaces.IRERNewsLayer"
+    template="templates/rernews_view.pt"
     />
+
+  <browser:page
+      name="rer-news-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.RERNewsSettingsControlPanel"
+      permission="rer.news.permissions.ManageSettings"
+      layer="rer.news.interfaces.IRERNewsLayer"
+      />
 </configure>

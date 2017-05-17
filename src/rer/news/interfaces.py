@@ -2,25 +2,25 @@
 """Module where all interfaces, events and exceptions live."""
 
 from plone.app.vocabularies.catalog import CatalogSource
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from plone.autoform import directives
+from plone.autoform import directives as form
+from plone.supermodel import model
 from rer.news import _
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from plone.supermodel import model
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
-from plone.autoform import directives as form
-from plone.app.z3cform.widget import RelatedItemsFieldWidget
-from plone.app.textfield import RichText as RichTextField
-from plone.app.z3cform.widget import RichTextFieldWidget
 
 
-class IRerNewsLayer(IDefaultBrowserLayer):
+class IRERNewsLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
-class IERNews(Interface):
+class IRERNews(model.Schema):
 
+    directives.order_after(image='IRichText.text')
     image = RelationList(
         title=_(u'Image'),
         default=[],
@@ -37,12 +37,14 @@ class IERNews(Interface):
         source=CatalogSource(portal_type=('Image'))
     )
 
+    directives.order_after(image_caption='image')
     image_caption = schema.TextLine(
         title=_(u'label_image_caption', default=u'Image Caption'),
         description=u'',
         required=False,
     )
 
+    directives.order_after(related_links='image_caption')
     related_links = RelationList(
         title=_(u'Related links'),
         default=[],
@@ -57,3 +59,12 @@ class IERNews(Interface):
         RelatedItemsFieldWidget,
         source=CatalogSource(portal_type=('Link'))
     )
+
+
+class IRERNewsSettings(Interface):
+    news_archive = schema.TextLine(
+        title=_(u'label_news_archive', default=u'News Archive'),
+        description=_(
+            u'label_image_caption_help',
+            default=u'Insert the path to a news arcvhive folder.'),
+        required=True)

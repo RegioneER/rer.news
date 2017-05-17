@@ -22,11 +22,11 @@ class TestSetup(unittest.TestCase):
             'rer.news'))
 
     def test_browserlayer(self):
-        """Test that IRerNewsLayer is registered."""
+        """Test that IRERNewsLayer is registered."""
         from rer.news.interfaces import (
-            IRerNewsLayer)
+            IRERNewsLayer)
         from plone.browserlayer import utils
-        self.assertIn(IRerNewsLayer, utils.registered_layers())
+        self.assertIn(IRERNewsLayer, utils.registered_layers())
 
 
 class TestUninstall(unittest.TestCase):
@@ -44,8 +44,8 @@ class TestUninstall(unittest.TestCase):
             'rer.news'))
 
     def test_browserlayer_removed(self):
-        """Test that IRerNewsLayer is removed."""
+        """Test that IRERNewsLayer is removed."""
         from rer.news.interfaces import \
-            IRerNewsLayer
+            IRERNewsLayer
         from plone.browserlayer import utils
-        self.assertNotIn(IRerNewsLayer, utils.registered_layers())
+        self.assertNotIn(IRERNewsLayer, utils.registered_layers())
