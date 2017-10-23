@@ -63,7 +63,7 @@ class IRERNews(model.Schema):
 
 class IRERNewsSettings(Interface):
     news_archive = schema.TextLine(
-        title=_(u'label_news_archive', default=u'News Archive'),
+        title=_(u'label_news_archive', default=u'News archive'),
         description=_(
             u'label_image_caption_help',
             default=u'Insert the path to a news arcvhive folder.'),

@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: rer.news\n"
+"Domain: DOMAIN\n"
 
 #: ../profiles/default/types/ERNews.xml
 msgid "ER News"
@@ -23,11 +20,11 @@ msgstr ""
 
 #: ../profiles/default/types/ERNews.xml
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: ../interfaces.py:25
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: ../browser/controlpanel.py:12
 #: ../profiles/default/controlpanel.xml
@@ -36,35 +33,34 @@ msgstr ""
 
 #: ../interfaces.py:49
 msgid "Related links"
-msgstr ""
+msgstr "Link correlati"
 
 #: ../profiles/default/types/ERNews.xml
 msgid "View"
-msgstr ""
+msgstr "Visualizza"
 
 #. Default: "Image Caption"
 #: ../interfaces.py:42
 msgid "label_image_caption"
-msgstr ""
+msgstr "Didascalia immagine"
 
 #. Default: "Insert the path to a news arcvhive folder."
 #: ../interfaces.py:67
 msgid "label_image_caption_help"
-msgstr ""
+msgstr "Inserisci il percorso ad un archivio di ER News"
 
 #. Default: "News archive"
 #: ../browser/templates/rernews_view.pt:44
 #: ../interfaces.py:66
 msgid "label_news_archive"
-msgstr ""
+msgstr "Archivio news"
 
 #. Default: "Additional contents"
 #: ../browser/templates/rernews_view.pt:55
 msgid "rernews_contents_label"
-msgstr ""
+msgstr "Approfondimenti"
 
 #. Default: "Links"
 #: ../browser/templates/rernews_view.pt:65
 msgid "rernews_link_label"
 msgstr ""
-
