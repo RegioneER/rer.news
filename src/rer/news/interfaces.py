@@ -21,16 +21,21 @@ class IRERNewsLayer(IDefaultBrowserLayer):
 class IRERNews(model.Schema):
 
     directives.order_after(image='IRichText.text')
-    image = RelationList(
+    image = RelationChoice(
         title=_(u'Image'),
-        default=[],
-        max_length=1,
-        value_type=RelationChoice(
-            title=u"Related",
-            source=CatalogSource(portal_type=('Image')),
-        ),
-        required=False
+        required=False,
+        source=CatalogSource(portal_type=('Image')),
     )
+    # image = RelationList(
+    #     title=_(u'Image'),
+    #     default=[],
+    #     max_length=1,
+    #     value_type=RelationChoice(
+    #         title=u"Related",
+    #         source=CatalogSource(portal_type=('Image')),
+    #     ),
+    #     required=False
+    # )
     form.widget(
         'image',
         RelatedItemsFieldWidget,

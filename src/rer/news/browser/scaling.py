@@ -13,14 +13,14 @@ class ImageScaling(BaseImageScaling):
 
     def get_image_scale_view(self):
         context = aq_base(self.context)
-        images = getattr(context, 'image', None)
-        if not images:
+        image = getattr(context, 'image', None)
+        if not image:
             return None
-        image = images[0].to_object
+        image_obj = image.to_object
         try:
             return api.content.get_view(
                 name='images',
-                context=image,
+                context=image_obj,
                 request=self.request,
             )
         except InvalidParameterError:
