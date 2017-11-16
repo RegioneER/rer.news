@@ -8,12 +8,13 @@ from plone.app.imaging.scaling import ImageScaling as BaseImageScaling
 from zope.interface import alsoProvides
 from zope.publisher.interfaces import NotFound
 
+
 try:
     from plone.scale.storage import AnnotationStorage
 except ImportError:
     logger = getLogger('plone.app.imaging')
-    logger.warn("Warning: no Python Imaging Libraries (PIL) found. "
-                "Can't scale images.")
+    logger.warn('Warning: no Python Imaging Libraries (PIL) found. '
+                'Can\'t scale images.')
 
 
 class ImageScaling(BaseImageScaling):

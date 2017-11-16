@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
-
 from plone.app.vocabularies.catalog import CatalogSource
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
-from plone.autoform import directives as form
 from plone.supermodel import model
 from rer.news import _
 from z3c.relationfield.schema import RelationChoice
@@ -26,7 +24,7 @@ class IRERNews(model.Schema):
         required=False,
         source=CatalogSource(portal_type=('Image')),
     )
-    form.widget(
+    directives.widget(
         'image',
         RelatedItemsFieldWidget,
         source=CatalogSource(portal_type=('Image'))
@@ -49,7 +47,7 @@ class IRERNews(model.Schema):
         ),
         required=False
     )
-    form.widget(
+    directives.widget(
         'related_links',
         RelatedItemsFieldWidget,
         source=CatalogSource(portal_type=('Link'))

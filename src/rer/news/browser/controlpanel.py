@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from rer.news import _
-from rer.news.interfaces import IRERNewsSettings  # NOQA
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
+from rer.news import _
+from rer.news.interfaces import IRERNewsSettings  # NOQA
 
 
 class RERNewsSettingsEditForm(RegistryEditForm):

@@ -4,20 +4,22 @@ from plone.api.exc import InvalidParameterError
 from Products.Five.browser import BrowserView
 from rer.news.interfaces import IRERNewsSettings
 from zope.i18nmessageid import MessageFactory
+
 import logging
 import pkg_resources
+
 
 logger = logging.getLogger(__name__)
 PLMF = MessageFactory('plonelocales')
 
 
 class ERNewsView(BrowserView):
-    '''
+    """
     View for ERNews
-    '''
+    """
 
     def getVersion(self):
-        return pkg_resources.get_distribution("rer.news").version
+        return pkg_resources.get_distribution('rer.news').version
 
     def getEffectiveDate(self):
         """
@@ -63,10 +65,10 @@ class ERNewsView(BrowserView):
                 interface=IRERNewsSettings)
         except InvalidParameterError as e:
             logger.exception(e)
-            return ""
+            return ''
         if not path:
-            return ""
+            return ''
         item = api.content.get(path=path)
         if not item:
-            return ""
+            return ''
         return item.absolute_url()
