@@ -42,7 +42,7 @@ class IRERNews(model.Schema):
         title=_(u'Related links'),
         default=[],
         value_type=RelationChoice(
-            title=u"Related",
+            title=u'Related',
             source=CatalogSource(portal_type=('Link')),
         ),
         required=False
