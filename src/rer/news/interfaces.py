@@ -3,12 +3,16 @@
 from plone.app.vocabularies.catalog import CatalogSource
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
+from plone.directives import form
 from plone.supermodel import model
 from rer.news import _
+from z3c.form import validator
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
+from zope.component import provideAdapter
 from zope.interface import Interface
+from zope.interface import Invalid
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
@@ -22,7 +26,7 @@ class IRERNews(model.Schema):
     image = RelationChoice(
         title=_(u'Image'),
         required=False,
-        source=CatalogSource(portal_type=('Image')),
+        vocabulary='plone.app.vocabularies.Catalog',
     )
     directives.widget(
         'image',
@@ -61,3 +65,32 @@ class IRERNewsSettings(Interface):
             u'label_image_caption_help',
             default=u'Insert the path to a news arcvhive folder.'),
         required=True)
+
+
+class ImageValidator(validator.SimpleFieldValidator):
+    """z3c.form validator class for related images
+    """
+
+    def validate(self, value):
+        """Validate image
+        """
+        super(ImageValidator, self).validate(value)
+
+        if not value:
+            return
+        if value.portal_type != 'Image':
+            raise Invalid(
+                _(
+                    'reference_validation_image',
+                    u'You can only select images.'))
+
+
+# Set conditions for which fields the validator class applies
+validator.WidgetValidatorDiscriminators(
+    ImageValidator,
+    field=IRERNews['image']
+)
+
+# Register the validator so it will be looked up by z3c.form machinery
+# this should be done via ZCML
+provideAdapter(ImageValidator)
