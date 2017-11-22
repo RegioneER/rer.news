@@ -3,7 +3,6 @@
 from plone.app.vocabularies.catalog import CatalogSource
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
-from plone.directives import form
 from plone.supermodel import model
 from rer.news import _
 from z3c.form import validator

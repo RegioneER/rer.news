@@ -63,4 +63,4 @@ msgstr "Approfondimenti"
 #. Default: "Links"
 #: ../browser/templates/rernews_view.pt:65
 msgid "rernews_link_label"
-msgstr ""
+msgstr "Link"
