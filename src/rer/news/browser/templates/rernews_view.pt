@@ -25,7 +25,9 @@
     </metal:content-title>
     <metal:content-description fill-slot="content-description">
       <metal:content-description define-macro="content-description">
-
+        <div class="documentDescription" tal:condition="context/description">
+          ${context/description}
+        </div>
       </metal:content-description>
     </metal:content-description>
     <metal:content-core fill-slot="content-core">
@@ -62,7 +64,7 @@
           <div class="news-links"
                tal:define="links view/getLinks"
                tal:condition="links">
-            <h3 i18n:translate="rernews_link_label">Links</h3>
+            <h3 i18n:translate="rernews_link_label">Link</h3>
             <ul>
               <li tal:repeat="link links">
                 <a href="${link/remoteUrl}" title="${link/title}">${link/title}</a>
