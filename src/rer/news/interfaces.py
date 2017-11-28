@@ -84,12 +84,36 @@ class ImageValidator(validator.SimpleFieldValidator):
                     u'You can only select images.'))
 
 
+class LinksValidator(validator.SimpleFieldValidator):
+    """z3c.form validator class for related images
+    """
+
+    def validate(self, value):
+        """Validate links
+        """
+        super(LinksValidator, self).validate(value)
+
+        if not value:
+            return
+        invalids = filter(lambda x: x.portal_type != 'Link', value)
+        if invalids:
+            raise Invalid(
+                _(
+                    'reference_validation_image',
+                    u'You can only select images.'))
+
+
 # Set conditions for which fields the validator class applies
 validator.WidgetValidatorDiscriminators(
     ImageValidator,
     field=IRERNews['image']
 )
+validator.WidgetValidatorDiscriminators(
+    LinksValidator,
+    field=IRERNews['related_links']
+)
 
 # Register the validator so it will be looked up by z3c.form machinery
 # this should be done via ZCML
 provideAdapter(ImageValidator)
+provideAdapter(LinksValidator)
