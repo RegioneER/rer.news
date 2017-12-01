@@ -46,7 +46,7 @@ class IRERNews(model.Schema):
         default=[],
         value_type=RelationChoice(
             title=u'Related',
-            source=CatalogSource(portal_type=('Link')),
+            vocabulary='plone.app.vocabularies.Catalog',
         ),
         required=False
     )
