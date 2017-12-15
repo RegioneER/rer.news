@@ -63,7 +63,7 @@ msgstr "Puoi selezionare solamente delle immagini."
 #. Default: "You can only select Links."
 #: ../interfaces.py:101
 msgid "reference_validation_link"
-msgstr "Puoi selezionare solamente dei Collegamenti."
+msgstr "Puoi selezionare solamente dei contenuti di tipo Collegamento."
 
 #. Default: "Additional contents"
 #: ../browser/templates/rernews_view.pt:57
