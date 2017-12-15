@@ -99,8 +99,8 @@ class LinksValidator(validator.SimpleFieldValidator):
         if invalids:
             raise Invalid(
                 _(
-                    'reference_validation_image',
-                    u'You can only select images.'))
+                    'reference_validation_link',
+                    u'You can only select Links.'))
 
 
 # Set conditions for which fields the validator class applies

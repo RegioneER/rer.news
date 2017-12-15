@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-10-23 12:27+0000\n"
+"POT-Creation-Date: 2017-12-15 09:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Modifica"
 
-#: ../interfaces.py:25
+#: ../interfaces.py:26
 msgid "Image"
 msgstr "Immagine"
 
@@ -31,7 +31,7 @@ msgstr "Immagine"
 msgid "RER News settings"
 msgstr ""
 
-#: ../interfaces.py:49
+#: ../interfaces.py:45
 msgid "Related links"
 msgstr "Link correlati"
 
@@ -40,27 +40,37 @@ msgid "View"
 msgstr "Visualizza"
 
 #. Default: "Image Caption"
-#: ../interfaces.py:42
+#: ../interfaces.py:38
 msgid "label_image_caption"
 msgstr "Didascalia immagine"
 
 #. Default: "Insert the path to a news arcvhive folder."
-#: ../interfaces.py:67
+#: ../interfaces.py:63
 msgid "label_image_caption_help"
 msgstr "Inserisci il percorso ad un archivio di ER News"
 
 #. Default: "News archive"
-#: ../browser/templates/rernews_view.pt:44
-#: ../interfaces.py:66
+#: ../browser/templates/rernews_view.pt:46
+#: ../interfaces.py:62
 msgid "label_news_archive"
 msgstr "Archivio news"
 
+#. Default: "You can only select images."
+#: ../interfaces.py:82
+msgid "reference_validation_image"
+msgstr "Puoi selezionare solamente delle immagini."
+
+#. Default: "You can only select Links."
+#: ../interfaces.py:101
+msgid "reference_validation_link"
+msgstr "Puoi selezionare solamente dei Collegamenti."
+
 #. Default: "Additional contents"
-#: ../browser/templates/rernews_view.pt:55
+#: ../browser/templates/rernews_view.pt:57
 msgid "rernews_contents_label"
 msgstr "Approfondimenti"
 
-#. Default: "Links"
-#: ../browser/templates/rernews_view.pt:65
+#. Default: "Link"
+#: ../browser/templates/rernews_view.pt:67
 msgid "rernews_link_label"
 msgstr "Link"
