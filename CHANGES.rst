@@ -5,8 +5,8 @@ Changelog
 0.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix check in scaling override view
+  [cekk]
 
 0.1.0 (2017-12-21)
 ------------------

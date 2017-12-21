@@ -58,6 +58,8 @@ class ImageScaling(BaseImageScaling):
 
     def get_image_scale_view(self):
         image_obj = self.get_image_obj()
+        if not image_obj:
+            return None
         try:
             return api.content.get_view(
                 name='images',
