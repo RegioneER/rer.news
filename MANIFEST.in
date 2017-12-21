@@ -2,3 +2,8 @@ graft src/rer
 graft docs
 include *.rst
 global-exclude *.pyc
+exclude webpack/.gitignore
+recursive-include webpack *.js
+recursive-include webpack *.json
+recursive-include webpack *.less
+recursive-include webpack *.nvmrc
