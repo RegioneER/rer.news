@@ -5,7 +5,8 @@ Changelog
 0.1.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix rolemap with contributor permission
+  [cekk]
 
 
 0.1.2 (2018-01-05)
