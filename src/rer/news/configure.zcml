@@ -19,7 +19,7 @@
       />
 
   <include package=".browser" />
-
+  <include package=".upgrades" />
 
   <genericsetup:registerProfile
       name="default"
