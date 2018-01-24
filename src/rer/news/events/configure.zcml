@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="rer.paperboy">
+
+    <subscriber
+        for="rer.news.interfaces.IRERNews
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".on_creation.disablePortlets"
+    />
+
+</configure>

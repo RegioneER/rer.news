@@ -2,11 +2,11 @@ Changelog
 =========
 
 
-0.1.4 (unreleased)
+0.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Disable portlets inheritance when creating a news
+  [cekk]
 
 0.1.3 (2018-01-05)
 ------------------
