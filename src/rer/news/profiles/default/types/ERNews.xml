@@ -34,6 +34,7 @@
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
+    <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" remove="True"/>
     <element value="rer.news.behaviors.metadata.IBasicRerNews"/>
     <element value="plone.app.dexterity.behaviors.metadata.IOwnership"/>
     <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
@@ -46,6 +47,7 @@
     <element value="plone.app.relationfield.behavior.IRelatedItems"/>
     <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
     <element value="plone.app.lockingbehavior.behaviors.ILocking" />
+    <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
     <element value="plone.layoutaware" />
   </property>
 
