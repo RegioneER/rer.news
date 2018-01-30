@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.0 (unreleased)
+0.2.0 (2018-01-30)
 ------------------
 
 - Disable portlets inheritance when creating a news
