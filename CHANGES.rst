@@ -7,6 +7,9 @@ Changelog
 
 - Disable portlets inheritance when creating a news
   [cekk]
+- remove IDublinCore behavior and switch the IBasic 
+  behavior with a custom one where title is a textarea
+  [lucabel]
 
 0.1.3 (2018-01-05)
 ------------------
