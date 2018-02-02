@@ -5,11 +5,7 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="rer.news">
-  <head>
-    <metal:styleslot fill-slot="style_slot">
-      <link rel="stylesheet" type="text/css" href="/++plone++rer.news/rernews.css?version=${view/getVersion}" />
-    </metal:styleslot>
-  </head>
+  <head></head>
 
   <body>
     <metal:content-title fill-slot="content-title">
