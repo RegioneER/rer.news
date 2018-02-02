@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.1 (unreleased)
+0.2.1 (2018-02-02)
 ------------------
 
 - Removed dangerous css [nzambello]
