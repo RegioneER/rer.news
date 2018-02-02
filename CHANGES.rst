@@ -5,7 +5,7 @@ Changelog
 0.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Removed dangerous css [nzambello]
 
 
 0.2.0 (2018-01-30)
@@ -13,7 +13,7 @@ Changelog
 
 - Disable portlets inheritance when creating a news
   [cekk]
-- remove IDublinCore behavior and switch the IBasic 
+- remove IDublinCore behavior and switch the IBasic
   behavior with a custom one where title is a textarea
   [lucabel]
 
