@@ -5,7 +5,8 @@ Changelog
 0.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Show right syndication an og:* attributes for news image
+  [cekk]
 
 
 0.2.1 (2018-02-02)

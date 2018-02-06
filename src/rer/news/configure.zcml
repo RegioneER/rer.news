@@ -46,4 +46,10 @@
       factory=".setuphandlers.HiddenProfiles"
       name="rer.news-hiddenprofiles" />
 
+  <!-- adapter for syndication and social og: attributes -->
+  <adapter factory=".adapters.SyndicationERNewsItem"
+           for="rer.news.interfaces.IRERNews
+                Products.CMFPlone.interfaces.syndication.IFeed"
+           provides="Products.CMFPlone.interfaces.syndication.IFeedItem" />
+
 </configure>
