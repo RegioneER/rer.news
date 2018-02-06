@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.2 (unreleased)
+0.2.2 (2018-02-06)
 ------------------
 
 - Show right syndication an og:* attributes for news image
