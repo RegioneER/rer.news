@@ -21,14 +21,4 @@ class SyndicationERNewsItem(DexterityItem):
             return
         self.file = image_file
         self.field_name = 'image'
-
-    @property
-    def file_url(self):
-        url = self.base_url
-        fi = self.file
-        if fi is not None:
-            filename = fi.filename
-            if filename:
-                url += '/@@images/%s/fbshare' %(
-                    self.field_name)
-        return url
+        
