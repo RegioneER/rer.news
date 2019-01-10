@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "tooltip-related-image.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+  "file": "bundle-compiled.js",
+  "sourcesContent": [
+    "require(['jquery', 'mockup-patterns-modal'], function($, Modal) {\n  $(document).ready(function() {\n    $('#formfield-form-widgets-image').each(function() {\n      $(this)\n        .children('.pat-relateditems')\n        .on('select2-loaded', function() {\n          $('.image-modal').each(function(i, el) {\n            var modal = new Modal($(el), {\n              backdropOptions: {\n                closeOnEsc: true,\n                closeOnClick: true,\n                zIndex: '10000',\n                opacity: '0.90',\n              },\n              content: '#content',\n              loadLinksWithinModal: false,\n            });\n            modal.on('shown', function() {\n              $('.plone-modal-body > div > div > figure > a').removeAttr(\n                'href'\n              );\n            });\n            modal.on('after-render', function() {\n              $(\n                '.plone-modal-header > a.plone-modal-close, .plone-modal-footer > a.plone-modal-close, .plone-modal-body > div > div > figure > a',\n                self.$modal\n              )\n                .off('click')\n                .on('click', function(e) {\n                  e.stopPropagation();\n                  e.preventDefault();\n                  $(e.target).trigger('destroy.plone-modal.patterns');\n                });\n            });\n          });\n        });\n    });\n  });\n});\n\ndefine(\"tooltip-related-image.js\", function(){});\n\n"
+  ]
+}

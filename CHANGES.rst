@@ -5,7 +5,8 @@ Changelog
 0.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added modal to relatedItems widget to show image.
+  [eikichi18]
 
 
 0.2.2 (2018-02-06)

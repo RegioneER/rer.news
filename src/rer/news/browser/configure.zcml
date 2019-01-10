@@ -12,11 +12,11 @@
       />
 
   <!-- Publish static files -->
-  <!-- <plone:static
-     -     name="rer.news"
-     -     type="plone"
-     -     directory="static"
-     -     /> -->
+  <plone:static
+      name="rer.news"
+      type="plone"
+      directory="static"
+      />
 
   <browser:page
       for="rer.news.interfaces.IRERNews"
@@ -42,4 +42,5 @@
       permission="rer.news.permissions.ManageSettings"
       layer="rer.news.interfaces.IRERNewsLayer"
       />
+
 </configure>
