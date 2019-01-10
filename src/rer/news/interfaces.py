@@ -15,6 +15,25 @@ from zope.interface import Invalid
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
+RESULT_TEMPLATE = """
+    <div class="pattern-relateditems-result<% if (oneLevelUp) { %> one-level-up<% } %>">
+      <span class="pattern-relateditems-buttons">
+      <% if (is_folderish) { %>
+        <a class="pattern-relateditems-result-browse" data-path="<%- path %>" title="<%- open_folder %>"></a>
+      <% } %>
+      </span>
+      <span class="pattern-relateditems-info">
+          <a class="pattern-relateditems-result-select<% if (selectable) { %> selectable<% } else if (browsing && is_folderish) { %> pattern-relateditems-result-browse<% } %><% if (oneLevelUp) { %> one-level-up<% } %>" data-path="<%- path %>">
+            <% if (getURL && (getIcon || portal_type === "Image")) { %><img src="<%- getURL %>/@@images/image/icon "><br><% } %>
+            <span class="pattern-relateditems-result-title<%- portal_type ? ' contenttype-' + portal_type.toLowerCase() : '' %><%- review_state ? ' state-' + review_state : '' %>" title="<%- portal_type %>"><%- Title %></span>
+            <span class="pattern-relateditems-result-path"><%- path %></span>
+          </a>
+          <% if (getURL && (getIcon || portal_type === "Image")) { %><div><a href="<%- getURL %>/image_view" class="image-modal pat-plone-modal pattern-relateditems-result-title">Visualizza</a></div><% } %>
+      </span>
+    </div>
+"""
+
+
 class IRERNewsLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
@@ -30,7 +49,10 @@ class IRERNews(model.Schema):
     directives.widget(
         'image',
         RelatedItemsFieldWidget,
-        source=CatalogSource(portal_type=('Image'))
+        source=CatalogSource(portal_type=('Image')),
+        pattern_options={
+            'resultTemplate': RESULT_TEMPLATE
+        },
     )
 
     directives.order_after(image_caption='image')

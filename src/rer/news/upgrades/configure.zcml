@@ -23,4 +23,13 @@
         profile="rer.news:default"
     />
 
+  <genericsetup:upgradeStep
+      source="1200"
+      destination="1300"
+      title="Upgrade rer.news to 1300"
+      description=""
+      profile="rer.news:default"
+      handler=".upgrades.from_1200_to_1300"
+      />
+
 </configure>
