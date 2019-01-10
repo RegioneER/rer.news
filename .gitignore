@@ -34,3 +34,4 @@ report.html
 !.travis.yml
 !src/rer
 node_modules
+package-lock.json
