@@ -28,7 +28,7 @@ RESULT_TEMPLATE = """
             <span class="pattern-relateditems-result-title<%- portal_type ? ' contenttype-' + portal_type.toLowerCase() : '' %><%- review_state ? ' state-' + review_state : '' %>" title="<%- portal_type %>"><%- Title %></span>
             <span class="pattern-relateditems-result-path"><%- path %></span>
           </a>
-          <% if (getURL && (getIcon || portal_type === "Image")) { %><div><a href="<%- getURL %>/image_view" class="image-modal pat-plone-modal pattern-relateditems-result-title">Visualizza</a></div><% } %>
+          <% if (getURL && (getIcon && portal_type === "Image")) { %><div><a href="<%- getURL %>/image_view" class="image-modal pat-plone-modal pattern-relateditems-result-title">Visualizza</a></div><% } %>
       </span>
     </div>
 """
