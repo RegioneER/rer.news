@@ -1,7 +1,7 @@
-.plone-modal-body{
+.plone-modal-body.image-modal {
   text-align: center;
 }
 
-.pattern-relateditems-info{
+.pattern-relateditems-info {
   display: inline-block;
 }

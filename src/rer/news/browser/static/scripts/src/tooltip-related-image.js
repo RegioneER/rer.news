@@ -12,6 +12,9 @@ require(['jquery', 'mockup-patterns-modal'], function($, Modal) {
                 zIndex: '10000',
                 opacity: '0.90',
               },
+              templateOptions: {
+                classBodyName: 'plone-modal-body image-modal',
+              },
               content: '#content',
               loadLinksWithinModal: false,
             });
