@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.3 (unreleased)
+0.2.3 (2019-01-17)
 ------------------
 
 - Added modal to relatedItems widget to show image.
