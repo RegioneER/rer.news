@@ -5,7 +5,9 @@ Changelog
 0.2.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix url generation for og:image tag. Now is exposed the miniature link and not the link
+  with filename because filenames with spaces have problems in Facebook share.
+  [cekk]
 
 
 0.2.3 (2019-01-17)

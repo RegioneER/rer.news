@@ -7,7 +7,6 @@ from zope.component import adapter
 
 @adapter(IRERNews, IFeed)
 class SyndicationERNewsItem(DexterityItem):
-
     def __init__(self, context, feed):
         super(SyndicationERNewsItem, self).__init__(context, feed)
         image_ref = getattr(self.context, 'image', None)
@@ -21,4 +20,13 @@ class SyndicationERNewsItem(DexterityItem):
             return
         self.file = image_file
         self.field_name = 'image'
-        
+
+    @property
+    def file_url(self):
+        url = self.base_url
+        fi = self.file
+        if fi is not None:
+            filename = fi.filename.replace(' ', '%20')
+            if filename:
+                url += '/@@images/image'
+        return url
