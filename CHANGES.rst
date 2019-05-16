@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.4 (unreleased)
+0.2.4 (2019-05-16)
 ------------------
 
 - Fix url generation for og:image tag. Now is exposed the miniature link and not the link
