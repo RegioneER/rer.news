@@ -1,0 +1,71 @@
+# This repository adheres to the publiccode.yml standard by including this
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: "0.2"
+categories:
+  - application-development
+  - content-management
+logo: docs/rer-logo.png
+dependsOn:
+  open:
+    - name: Plone
+      optional: false
+      version: ""
+      versionMax: ""
+      versionMin: "5.1"
+description:
+  it:
+    features:
+      - Notizie
+    genericName: Plone addon
+    longDescription: >
+      Plugin per Plone che aggiunge un nuovo tipo di contenuto "ER News".
+
+      Questo tipo di contenuto si differenzia dalle Notizie normali di Plone per:
+        - Possibilità di inserire tile in 3 slot diversi rispetto al testo centrale
+          (sotto al titolo, sotto al corpo, colonna di destra)
+        - Contenuto folderish (tipo le cartelle) per organizzare al suo interno contenuti aggiuntivi
+
+    shortDescription: Tipo di contenuto notizia aggiuntivo
+developmentStatus: stable
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: true
+  countryExtensionVersion: "0.2"
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+legal:
+  license: GPL-2.0-only
+  mainCopyrightOwner: Regione Emilia-Romagna
+  repoOwner: Regione Emilia-Romagna
+localisation:
+  availableLanguages:
+    - it
+    - en
+  localisationReady: true
+maintenance:
+  contacts:
+    - affiliation: Regione Emilia-Romagna
+      email: webmaster@regione.emilia-romagna.it
+      name: Sara Turra
+  contractors:
+    - name: RedTurtle
+      until: "2020-08-31"
+      website: "https://www.redturtle.it/"
+  type: contract
+name: rer.news
+platforms:
+  - web
+releaseDate: "2019-05-16"
+softwareType: addon
+softwareVersion: 0.2.4
+url: "https://github.com/RegioneER/rer.news"
+usedBy:
+  - Regione Emilia-Romagna
