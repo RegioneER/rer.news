@@ -117,7 +117,7 @@ class LinksValidator(validator.SimpleFieldValidator):
 
         if not value:
             return
-        invalids = filter(lambda x: x.portal_type != 'Link', value)
+        invalids = [x for x in value if x.portal_type != 'Link']
         if invalids:
             raise Invalid(
                 _(

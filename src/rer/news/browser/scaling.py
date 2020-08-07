@@ -3,8 +3,8 @@ from Acquisition import aq_base
 from logging import getLogger
 from plone import api
 from plone.api.exc import InvalidParameterError
-from plone.app.imaging.interfaces import IStableImageScale
-from plone.app.imaging.scaling import ImageScaling as BaseImageScaling
+from plone.namedfile.interfaces import IStableImageScale
+from plone.namedfile.scaling import ImageScaling as BaseImageScaling
 from zope.interface import alsoProvides
 from zope.publisher.interfaces import NotFound
 
@@ -13,8 +13,10 @@ try:
     from plone.scale.storage import AnnotationStorage
 except ImportError:
     logger = getLogger('plone.app.imaging')
-    logger.warn('Warning: no Python Imaging Libraries (PIL) found. '
-                'Can\'t scale images.')
+    logger.warn(
+        'Warning: no Python Imaging Libraries (PIL) found. '
+        'Can\'t scale images.'
+    )
 
 
 class ImageScaling(BaseImageScaling):
@@ -36,7 +38,7 @@ class ImageScaling(BaseImageScaling):
         if stack and stack[-1] not in self._ignored_stacks:
             # field and scale name were given...
             scale = stack.pop()
-            image = self.scale(name, scale)             # this is aq-wrapped
+            image = self.scale(name, scale)  # this is aq-wrapped
         elif '.' in name:
             # we got a uid...
             uid, ext = name.rsplit('.', 1)
@@ -62,22 +64,29 @@ class ImageScaling(BaseImageScaling):
             return None
         try:
             return api.content.get_view(
-                name='images',
-                context=image_obj,
-                request=self.request,
+                name='images', context=image_obj, request=self.request
             )
         except InvalidParameterError:
             return None
 
-    def scale(self, fieldname=None, scale=None, height=None, width=None,
-              **parameters):
+    def scale(
+        self, fieldname=None, scale=None, height=None, width=None, **parameters
+    ):
         scale_view = self.get_image_scale_view()
         if not scale_view:
             return None
         return scale_view.scale(fieldname, scale, height, width, parameters)
 
-    def tag(self, fieldname=None, scale=None, height=None, width=None,
-            css_class=None, direction='keep', **args):
+    def tag(
+        self,
+        fieldname=None,
+        scale=None,
+        height=None,
+        width=None,
+        css_class=None,
+        direction='keep',
+        **args
+    ):
         """
         """
         scale_view = self.get_image_scale_view()
@@ -89,5 +98,5 @@ class ImageScaling(BaseImageScaling):
             height=height,
             width=width,
             css_class=css_class,
-            direction=direction
+            direction=direction,
         )

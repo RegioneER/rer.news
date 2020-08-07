@@ -22,7 +22,7 @@
       for="rer.news.interfaces.IRERNews"
       name="images"
       class=".scaling.ImageScaling"
-      allowed_interface="plone.app.imaging.interfaces.IImageScaling"
+      allowed_attributes="scale tag"
       layer="rer.news.interfaces.IRERNewsLayer"
       permission="zope2.View" />
 
