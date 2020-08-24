@@ -20,14 +20,21 @@ description:
       - Notizie
     genericName: Plone addon
     longDescription: >
-      Plugin per Plone che aggiunge un nuovo tipo di contenuto "ER News".
-
-      Questo tipo di contenuto si differenzia dalle Notizie normali di Plone per:
-        - Possibilità di inserire tile in 3 slot diversi rispetto al testo centrale
-          (sotto al titolo, sotto al corpo, colonna di destra)
-        - Contenuto folderish (tipo le cartelle) per organizzare al suo interno contenuti aggiuntivi
-
+      Plugin per Plone che aggiunge un nuovo tipo di contenuto "ER News". 
+      Questo tipo di contenuto si differenzia dalle Notizie normali di Plone
+      per:
+      - Possibilità di inserire tile in 3 slot diversi rispetto al testo
+      centrale (sotto al titolo, sotto al corpo, colonna di destra)
+      - Contenuto folderish (come le cartelle) per organizzare al suo interno
+      contenuti aggiuntivi
+      - si può indicare un contenuto correlato che appare linkato nella colonna
+      di destra, insieme ai contenuti aggiuntivi
+      - l'immagine si può scegliere tra i contenuti già caricati nel sito, e non
+      viene usata nel corpo della news.
     shortDescription: Tipo di contenuto notizia aggiuntivo
+    screenshots: 
+      - docs/ER-News_frontend.JPG
+      - docs/ER-News_backend.JPG
 developmentStatus: stable
 it:
   riuso:
@@ -62,7 +69,7 @@ maintenance:
       until: "2020-08-31"
       website: "https://www.redturtle.it/"
   type: contract
-name: rer.news
+name: Notizia estesa per CMS Plone
 platforms:
   - web
 releaseDate: "2019-05-16"
