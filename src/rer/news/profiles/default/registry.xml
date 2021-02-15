@@ -1,21 +1,3 @@
 <registry>
     <records interface="rer.news.interfaces.IRERNewsSettings" />
-
-    <records prefix="plone.resources/tooltip-related-image"
-          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-    <value key="js">++plone++rer.news/scripts/src/tooltip-related-image.js</value>
-    <value key="css">
-      <element>++plone++rer.news/tooltip-related-image.css</element>
-    </value>
-  </records>
-  <records prefix="plone.bundles/tooltip-related-image"
-          interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-    <value key="resources" purge="false">
-      <element>tooltip-related-image</element>
-    </value>
-    <value key="enabled">True</value>
-    <value key="jscompilation">++plone++rer.news/scripts/tooltip-related-image.min.js</value>
-    <value key="csscompilation">++plone++rer.news/tooltip-related-image.css</value>
-    <value key="compile">True</value>
-  </records>
 </registry>

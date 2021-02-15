@@ -1,6 +1,4 @@
 <registry>
-    <records interface="rer.news.interfaces.IRERNewsSettings" remove="true"/>
-
     <records prefix="plone.resources/tooltip-related-image"
           interface='Products.CMFPlone.interfaces.IResourceRegistry'
           remove="True">
