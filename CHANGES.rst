@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.2.5 (unreleased)
+0.2.5 (2021-02-18)
 ------------------
 
 - Remove modal patch (now it's integrated into rer.base).
