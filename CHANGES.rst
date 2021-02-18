@@ -5,8 +5,8 @@ Changelog
 0.2.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Remove modal patch (now it's integrated into rer.base).
+  [cekk]
 
 0.2.4 (2019-05-16)
 ------------------

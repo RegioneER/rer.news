@@ -41,6 +41,13 @@
       post_handler=".setuphandlers.uninstall"
       />
 
+  <genericsetup:registerProfile
+      name="to_1400"
+      title="RER: News"
+      directory="profiles/to_1400"
+      description="Remove unused bundle."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"

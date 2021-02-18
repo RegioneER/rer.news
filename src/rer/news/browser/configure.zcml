@@ -11,13 +11,6 @@
       layer="rer.news.interfaces.IRERNewsLayer"
       />
 
-  <!-- Publish static files -->
-  <plone:static
-      name="rer.news"
-      type="plone"
-      directory="static"
-      />
-
   <browser:page
       for="rer.news.interfaces.IRERNews"
       name="images"
