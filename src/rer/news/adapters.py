@@ -7,6 +7,7 @@ from zope.component import adapter
 
 @adapter(IRERNews, IFeed)
 class SyndicationERNewsItem(DexterityItem):
+
     def __init__(self, context, feed):
         super(SyndicationERNewsItem, self).__init__(context, feed)
         image_ref = getattr(self.context, 'image', None)

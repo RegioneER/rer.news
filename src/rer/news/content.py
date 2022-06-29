@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from interfaces import IRERNews
+from rer.news.interfaces import IRERNews
 from plone.dexterity.content import Container
 from zope.interface import implementer
 

@@ -61,7 +61,7 @@ class IRERNewsSettings(Interface):
         title=_(u"label_news_archive", default=u"News archive"),
         description=_(
             u"label_image_caption_help",
-            default=u"Insert the path to a news arcvhive folder.",
+            default=u"Insert the path to a news archive folder.",
         ),
         required=True,
     )

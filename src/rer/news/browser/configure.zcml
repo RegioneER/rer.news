@@ -11,11 +11,18 @@
       layer="rer.news.interfaces.IRERNewsLayer"
       />
 
+  <!-- Publish static files -->
+  <plone:static
+      name="rer.news"
+      type="plone"
+      directory="static"
+      />
+
   <browser:page
       for="rer.news.interfaces.IRERNews"
       name="images"
       class=".scaling.ImageScaling"
-      allowed_interface="plone.app.imaging.interfaces.IImageScaling"
+      allowed_attributes="scale tag"
       layer="rer.news.interfaces.IRERNewsLayer"
       permission="zope2.View" />
 

@@ -44,7 +44,7 @@ msgstr "Visualizza"
 msgid "label_image_caption"
 msgstr "Didascalia immagine"
 
-#. Default: "Insert the path to a news arcvhive folder."
+#. Default: "Insert the path to a news archive folder."
 #: ../interfaces.py:63
 msgid "label_image_caption_help"
 msgstr "Inserisci il percorso ad un archivio di ER News"

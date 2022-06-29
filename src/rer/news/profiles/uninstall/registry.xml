@@ -1,12 +1,3 @@
 <registry>
     <records interface="rer.news.interfaces.IRERNewsSettings" remove="true"/>
-
-    <records prefix="plone.resources/tooltip-related-image"
-          interface='Products.CMFPlone.interfaces.IResourceRegistry'
-          remove="True">
-  </records>
-  <records prefix="plone.bundles/tooltip-related-image"
-          interface='Products.CMFPlone.interfaces.IBundleRegistry'
-          remove="True">
-  </records>
 </registry>
